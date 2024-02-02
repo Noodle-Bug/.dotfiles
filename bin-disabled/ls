@@ -1,0 +1,25 @@
+#!/bin/bash
+
+DIRS="`/bin/ls --color=auto -lah $@ | grep ^d`"
+FILES="`/bin/ls --color=auto -lah $@ | grep ^\-`"
+
+# sort dirs and files alphabetically
+DIRS="`echo "$DIRS" | sort`"
+FILES="`echo "$FILES" | sort`"
+
+echo ""
+if [ "$DIRS" ]
+then
+    # echo "DIRECTORIES"
+    echo -e "$DIRS\
+
+"
+fi
+
+if [ "$FILES" ]
+then
+    # echo "FILES"
+    echo "$FILES\
+
+"
+fi
