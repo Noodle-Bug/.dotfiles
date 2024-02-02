@@ -21,6 +21,8 @@ If you don't want this, and would rather overwrite existing files with the `.dot
 stow --adopt .
 ```
 
+[Useful youtube video](https://youtu.be/y6XCebnB9gs?si=1xOtrTq_fIoq6FBv)
+
 
 
 ## Github setup
