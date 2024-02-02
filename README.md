@@ -1,28 +1,45 @@
 # .dotfiles
 dotfile config for bash + tmux in wsl
 
+
+------------------
+
+
 ## Setup
 To ease setup, use [GNU stow](https://www.gnu.org/software/stow/)
-```
+```bash
 sudo apt install stow
+cd .dotfiles
+stow .
+```
+<br>
+
+the `--adopt` flag can be used to overwrite what's in the `.dotfiles` directory with existing files, if you get a conflict error.
+**This will overwrite what is currently in `.dotfiles` with your existing file**
+If you don't want this, and would rather overwrite existing files with the `.dotfiles`, simply delete the existing ones and run `.stow .` again.
+```bash
+stow --adopt .
 ```
 
-## github setup
 
-### install git-credential-manager
+
+## Github setup
+
+### Install git-credential-manager
 [git-credential-manager](https://github.com/git-ecosystem/git-credential-manager)
 
-### install gpg
-```
+### Install gpg
+```bash
 sudo apt install gpg
 ```
 
-### set key
-```
+### Set key
+```bash
 gpg --full-generate-key
 ```
+<br>
 
-This should provide options. Default should suffice
+This command will provide options. Defaults should suffice
 ```
 Please select what kind of key you want:
    (1) RSA and RSA (default)
@@ -32,19 +49,19 @@ Please select what kind of key you want:
   (14) Existing key from card
 ```
 
-### get your generated key id
-```
+### Get your generated key id
+```bash
 gpg --list-secret-keys
 ```
 
-### install pass
-```
+### Install pass
+```bash
 sudo apt install pass
 ```
 
-### init pass with the key id
-```
+### Init pass with the key id
+```bash
 pass init "GPG_KEY"
 ```
-
+<br>
 You should now be set up!
