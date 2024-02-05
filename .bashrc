@@ -79,72 +79,16 @@ xterm*|rxvt*)
     ;;
 esac
 
-
-
-
-lsf() {
-	if [ -x /usr/bin/dircolors ]; then
-		command echo
-		command ls --color=auto -a -F "$@" | awk '
-		    BEGIN {
-				# Initialize arrays to hold directory and non-directory lines
-				dir_count=0;
-				non_dir_count=0;
-			}
-			/\/$/ && !/^\.\.?\/$/ { # Lines that end with "/" represent directories
-				gsub(/\/$/, "", $0); # Remove the trailing slash
-				dir_lines[dir_count++] = sprintf("[%s]", $0); # Store the modified directory line
-			}
-			!/\/$/ && !/^\.\.?$/ { # Lines that do not end with "/" are not directories
-				non_dir_lines[non_dir_count++] = $0; # Store non-directory lines as-is
-			}
-			END {
-				# Print directories first
-				for(i=0; i<dir_count; i++) {
-					print dir_lines[i];
-				}
-				# Then print non-directory lines
-				for(i=0; i<non_dir_count; i++) {
-					print non_dir_lines[i];
-				}
-			}
-			'
-		command echo
-	else
-		command echo
-		command ls -a -F -w 80 "$@" | awk '
-		    BEGIN {
-				# Initialize arrays to hold directory and non-directory lines
-				dir_count=0;
-				non_dir_count=0;
-			}
-			/\/$/ && !/^\.\.?\/$/ { # Lines that end with "/" represent directories
-				gsub(/\/$/, "", $0); # Remove the trailing slash
-				dir_lines[dir_count++] = sprintf("[%s]", $0); # Store the modified directory line
-			}
-			!/\/$/ && !/^\.\.?$/ { # Lines that do not end with "/" are not directories
-				non_dir_lines[non_dir_count++] = $0; # Store non-directory lines as-is
-			}
-			END {
-				# Print directories first
-				for(i=0; i<dir_count; i++) {
-					print dir_lines[i];
-				}
-				# Then print non-directory lines
-				for(i=0; i<non_dir_count; i++) {
-					print non_dir_lines[i];
-				}
-			}
-			'
-		command echo
-		# command echo;ls -w 1 "$1";echo;
-	fi
+ls(){
+	command echo;
+	command ls -a -w 80 --color=auto "$@";
+	command echo;
 }
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='echo;ls -a -F -w 80 --color=auto'
+    # alias ls='echo;ls -a -w 80 --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
