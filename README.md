@@ -65,5 +65,13 @@ sudo apt install pass
 ```bash
 pass init "GPG_KEY"
 ```
+
 <br>
 You should now be set up!
+
+## Troubleshooting:
+```
+gpg: public key decryption failed: Timeout
+```
+
+Try: `gpgconf --kill gpg-agent`
