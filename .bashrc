@@ -79,6 +79,12 @@ xterm*|rxvt*)
     ;;
 esac
 
+tree(){
+	command echo;
+	command tree;
+	command echo;
+}
+
 ls(){
 	command echo;
 	command ls -a -w 80 --color=auto "$@";
