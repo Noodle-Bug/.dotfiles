@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+	/* box-sizing: border-box; */
+	min-height: 0;
+	min-width: 0;
+}
+
+window {
+	border-radius: 15px;
+	animation: loadIn 0.10s ease;
+	animation: none;
+	padding: 500px;
+	margin: 500px;
+	background-color: rgba(0, 0, 0, 0.9);
+	color: #ddd;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+
+#input {
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	margin: 5px;
+	background-color: rgba(0, 0, 0, 0);
+	outline: none;
+	color: #ddd;
+}
+
+/* Remove outline while typing*/
+#input:focus {
+	outline: none;
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: none;
+}
+
+#input::placeholder {
+	color: #aaa;
+}
+
+#scroll {
+	border-radius: 15px;
+	padding: 5px;
+	border: none;
+	margin: 5px;
+	padding-top: 15px;
+	/* background-color: #000; */
+	/* background-color: --wofi-color-0; */
+	/* background-color: #ED4807 */
+}
+
+
+
+#entry {
+	border-radius: 10px;
+	padding: 5px;
+}
+#entry:selected {
+	background-color: rgba(255, 255, 255, 0.1);
+	outline: none;
+}
+#text:selected {
+	/* color: #600000; */
+}
+
+@keyframes loadIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

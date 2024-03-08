@@ -1,6 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+export TERM=xterm-256color
 
 # If not running interactively, don't do anything
 case $- in
@@ -81,7 +82,7 @@ esac
 
 tree(){
 	command echo;
-	command tree;
+	command tree "$@";
 	command echo;
 }
 
@@ -89,6 +90,10 @@ ls(){
 	command echo;
 	command ls -a -w 80 --color=auto "$@";
 	command echo;
+}
+
+mkcd(){
+	mkdir -p "$1" && cd "$1";
 }
 
 # enable color support of ls and also add handy aliases
@@ -147,5 +152,31 @@ PROMPT_DIRTRIM=2
 alias psh=powershell.exe
 alias pc="powershell.exe -Command"
 alias cd..="cd .."
+alias clear="printf '\033[2J\033[3J\033[1;1H'"
+alias wreboot="sudo grub-reboot 2 && sudo reboot"
 # alias lazygit="powershell.exe -Command lazygit"
 #alias interpreter="powershell.exe -Command interpreter"
+
+# Exports
+export SUDO_EDITOR=/usr/bin/nvim
+export EDITOR=/usr/bin/nvim
+export GCM_CREDENTIAL_STORE=gpg
+. "$HOME/.cargo/env"
+
+# zoxide
+eval "$(zoxide init --cmd cd bash)"
+
+# Created by `pipx` on 2024-02-28 02:06:43
+export PATH="$PATH:/home/noodlebug/.local/bin"
+
+# If wayland_display is set to anything, we can use this prompt
+if [ $WAYLAND_DISPLAY ]; then
+PS1='\[\e[38;5;30m\]\[\e[38;5;16;48;5;30m\]󰣇\[\e[39m\] \[\e[38;5;16m\]\u\[\e[38;5;30;48;5;233m\]\[\e[39m\] \w \[\e[38;5;233;48;5;30m\]\[\e[38;5;16m\]\$\[\e[0;38;5;30m\]\[\e[0m\] '
+fi
+
+# . /opt/asdf-vm/asdf.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

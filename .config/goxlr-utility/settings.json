@@ -1,0 +1,50 @@
+{
+  "show_tray_icon": true,
+  "tts_enabled": false,
+  "allow_network_access": false,
+  "profile_directory": "/home/noodlebug/.local/share/goxlr-utility/profiles",
+  "mic_profile_directory": "/home/noodlebug/.local/share/goxlr-utility/mic-profiles",
+  "samples_directory": "/home/noodlebug/.local/share/goxlr-utility/samples",
+  "presets_directory": "/home/noodlebug/.local/share/goxlr-utility/presets",
+  "icons_directory": "/home/noodlebug/.local/share/goxlr-utility/icons",
+  "logs_directory": "/home/noodlebug/.local/share/goxlr-utility/logs",
+  "log_level": "Debug",
+  "open_ui_on_launch": false,
+  "activate": null,
+  "devices": {
+    "S210304512CQK": {
+      "profile": "Default",
+      "mic_profile": "DEFAULT",
+      "hold_delay": 500,
+      "sampler_pre_buffer": null,
+      "chat_mute_mutes_mic_to_chat": true,
+      "lock_faders": false,
+      "enable_monitor_with_fx": false,
+      "shutdown_commands": [
+        {
+          "LoadProfile": [
+            "Sleep",
+            false
+          ]
+        }
+      ],
+      "sleep_commands": [
+        {
+          "LoadProfile": [
+            "Sleep",
+            false
+          ]
+        }
+      ],
+      "wake_commands": [
+        {
+          "LoadProfile": [
+            "Default",
+            false
+          ]
+        }
+      ]
+    }
+  },
+  "sample_gain": {}
+}

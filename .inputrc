@@ -1,3 +1,7 @@
+# vi mode
+set editing-mode vi
+
+# better autocompletion
 set show-all-if-ambiguous off
 set completion-ignore-case on
 TAB: menu-complete

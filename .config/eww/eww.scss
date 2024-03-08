@@ -1,0 +1,231 @@
+* {
+	all: unset; //Unsets everything so you can style everything from scratch
+	margin: 0;
+	padding: 0;
+	// border: 1px solid red;
+}
+
+//Global Styles
+.bar {
+	// padding: 10px;
+	margin-top: 10px;
+	// background-color: rgba(0, 0, 0, 0.8);
+	// background-image:
+	// 	linear-gradient(rgba(23, 26, 41), rgba(23, 26, 41)), 
+	// 	linear-gradient(90deg, rgba(237, 72, 7, 0.5) 25%, rgba(67, 102, 117, 0.5) 60%, rgba(122, 215, 255, 0.5) 85%);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	// box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.background.bar {
+	background-color: rgba(0, 0, 0, 0);
+	background-image: none;
+	box-shadow: none;
+	border: none;
+}
+
+
+// Styles on classes (see eww.yuck for more information)
+
+.metric scale trough highlight {
+	all: unset;
+	background-color: #D35D6E;
+	color: #000000;
+	border-radius: 10px;
+}
+.metric scale trough {
+	all: unset;
+	background-color: #4e4e4e;
+	border-radius: 50px;
+	min-height: 3px;
+	min-width: 50px;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+.metric scale trough highlight {
+	all: unset;
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 10px;
+}
+.metric scale trough {
+	all: unset;
+	// background-color: #000000;
+	border: 1px solid #ffffff;
+	border-radius: 50px;
+	min-height: 3px;
+	min-width: 50px;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+.label-ram {
+	font-size: large;
+}
+
+.workspaces-container{
+		border: 1px solid rgba(150, 150, 150, 0.1);
+		box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+		border-radius: 10px;
+
+	.workspaces {
+		background-color: rgba(0, 0, 0, 0.8);
+		margin: 0;
+		border-radius: 10px 0px 0px 10px;
+		padding: 10px;
+	}
+
+	.weather {
+		background-color: rgba(0, 0, 0, 0.8);
+		padding: 10px;
+		border-radius: 0px 10px 10px 0px;
+		font-size: 20px;
+		margin-left: 0px;
+	}
+
+}
+
+.workspaces button {
+	color: #fff;
+	padding: 5px 10px;
+	margin: 0;
+	// transition: background-color 0.2s;
+	transition: all 0.2s;
+
+	&:hover {
+		color: #D35D6E;
+	}
+
+	&.active {
+		background-color: rgba(255, 255, 255, 1);
+		color: #222222;
+		font-weight: bold;
+		border-radius: 4px;
+	}
+}
+
+.music {
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 10px;
+	padding-right: 20px;
+	border-radius: 10px;
+	font-family: sans-serif;
+
+	.album_art {
+		// border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.controls {
+		font-family: monospace;
+		margin-right: 15px;
+		padding-right: 15px;
+		border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+		button {
+			// padding: 5px;
+			border-radius: 5px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			font-size: 20px;
+		}
+
+		.progress-container{
+			padding: 3px;
+		}
+
+		.progress.playing{
+			animation: rainbow 60s infinite;
+			background-color: rgba(0, 0, 0, 0);
+		}
+		.progress.paused{
+			color: rgba(255, 255, 255, 0.3);
+			transition: color 1s;
+		}
+	}
+
+	.spacer{
+		padding: 5px;
+	}
+
+	.info {
+		// background-color: rgba(0, 0, 0, 0.5);
+		// border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 0px 5px 5px 0px;
+		padding: 0px 10px;
+
+		text-shadow: 
+			0px 0px 2px rgba(0, 0, 0, 1),
+			0px 0px 2px rgba(0, 0, 0, 1),
+			0px 0px 2px rgba(0, 0, 0, 1);
+
+	}
+}
+
+@keyframes rainbow {
+	0% { color: #ff0000; }
+	8% { color: #ff8000; }
+	16% { color: #ffff00; }
+	25% { color: #80ff00; }
+	33% { color: #00ff00; }
+	41% { color: #00ff80; }
+	50% { color: #00ffff; }
+	58% { color: #0080ff; }
+	66% { color: #0000ff; }
+	75% { color: #8000ff; }
+	83% { color: #ff00ff; }
+	91% { color: #ff0080; }
+	100% { color: #ff0000; }
+}
+
+.sidestuff {
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 10px;
+	border-radius: 10px 0px 0px 10px;
+	font-size: 20px;
+
+	.slider {
+		all: unset;
+		color: #ffd5cd;
+		padding: 2px;
+	}
+
+
+}
+
+.clock {
+	font-family: monospace;
+	font-size: 14px;
+	border-left: 1px solid rgba(255, 255, 255, 0.2);
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+window.calendar{
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 5px;
+	border-radius: 10px;
+
+	.button {
+	}
+
+	.header {
+	}
+
+	.highlight {
+		border: 1px solid blue;
+	}
+
+	:selected {
+		background-color: rgba(255, 255, 255, 0.2);
+		border-radius: 5px;
+	}
+
+	:indeterminate {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+}
+window.calendar > * {
+	padding: 7px;
+}
+
