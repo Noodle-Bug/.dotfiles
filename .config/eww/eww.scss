@@ -77,10 +77,15 @@
 
 	.weather {
 		background-color: rgba(0, 0, 0, 0.8);
-		padding: 10px;
+		padding: 10px 0px;
 		border-radius: 0px 10px 10px 0px;
-		font-size: 20px;
+		font-size: 10px;
 		margin-left: 0px;
+
+		.icon {
+			padding: 0px 10px;
+			border-left: 1px solid rgba(255, 255, 255, 0.2);
+		}
 	}
 
 }

@@ -22,6 +22,9 @@
 (defpoll volume :interval "1s"
 	"scripts/getvol")
 
+(defpoll temperature :interval "7200s"
+	"scripts/weather/getWeather.sh")
+
 (defpoll time :interval "10s"
 	"date '+%m/%d  %H:%M'")
 
@@ -84,6 +87,10 @@
 		:orientation "h"
 		:space-evenly false
 		:halign "start"
+		(box 
+			:class "icon"
+			temperature "°" 
+		)
 	)
 )
 
