@@ -1,0 +1,13 @@
+* {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#XfceNotifyWindow {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #fff;
+}
+
+button {
+	border: 1px solid white;
+	background-color: rgba(0, 0, 0, 0);
+}
